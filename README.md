@@ -11,6 +11,13 @@
 cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name my-project
 cd my-project
 
-# 编译 wasm
-wasm-pack build
+# 编译 wasm web
+wasm-pack build --target web
+
+# 项目引用见 www/index.js
 ```
+
+参考资料
+- https://doc.rust-lang.org/book/
+- https://rustwasm.github.io/docs.html
+- https://wasmbyexample.dev/home.en-us.html
