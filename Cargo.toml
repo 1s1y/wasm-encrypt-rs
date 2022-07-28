@@ -1,0 +1,24 @@
+[package]
+name = "wasm-encrypt-rs"
+version = "0.1.0"
+authors = ["FAE56 <96350075+FAE56@users.noreply.github.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2.81"
+base64 = "0.13.0"
+pbkdf2 = "0.11"
+aes-gcm = "0.9.4"
+rand_core = { version = "0.6", features = ["std"] }
+getrandom = { version = "0.2", features = ["js"] }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.13"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+lto = true
+opt-level = "s"
